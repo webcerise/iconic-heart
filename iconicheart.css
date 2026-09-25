@@ -2476,7 +2476,7 @@ fieldset { border: 1px solid var(--ih-line); }
   bottom: 0;
   left: 0;
   width: 201px;
-  background: var(--ih-ink);
+  background: #ffffff;
   pointer-events: none;
 }
 
@@ -2560,9 +2560,18 @@ fieldset { border: 1px solid var(--ih-line); }
   font-size: 18px;
 }
 
+.topic-view .post-id,
+.topic-view .post_profile {
+  --ih-card: #ffffff;
+  --ih-ink: #111111;
+  --ih-on-ink: #ffffff;
+  --ih-muted: #6e6e6e;
+  --ih-line: #c8c8c5;
+}
+
 .topic-view .post_profile {
   position: sticky;
-  top: 18px;
+  top: 0;
   display: flex;
   min-width: 0;
   grid-column: 1;
@@ -2570,8 +2579,9 @@ fieldset { border: 1px solid var(--ih-line); }
   align-self: start;
   flex-direction: column;
   padding: 0;
-  border-right: 1px solid var(--ih-ink);
+  border-right: 0;
   background: var(--ih-card);
+  color: var(--ih-ink);
 }
 
 .post-id {
@@ -2584,8 +2594,8 @@ fieldset { border: 1px solid var(--ih-line); }
   padding: 0;
   overflow: hidden;
   border-bottom: 5px solid var(--post-color);
-  background: var(--ih-ink);
-  color: var(--ih-on-ink);
+  background: #111111;
+  color: #ffffff;
 }
 
 .post-id > div {
@@ -2627,7 +2637,6 @@ fieldset { border: 1px solid var(--ih-line); }
   margin: 0;
   place-items: center;
   overflow: hidden;
-  border-bottom: 1px solid var(--ih-ink);
   background: var(--post-color);
 }
 
@@ -2773,9 +2782,10 @@ fieldset { border: 1px solid var(--ih-line); }
 .topic-view .post_userinfo {
   position: relative;
   display: grid;
-  max-height: 360px;
+  max-height: 226px;
   overflow: auto;
   background: var(--ih-card);
+  color: var(--ih-ink);
   scrollbar-color: var(--post-color) var(--ih-card);
   scrollbar-width: thin;
 }
@@ -2789,7 +2799,7 @@ fieldset { border: 1px solid var(--ih-line); }
   justify-content: center;
   gap: 8px;
   padding: 14px 18px 14px 21px;
-  border-top: 1px solid var(--ih-line);
+  border-bottom: 1px solid var(--ih-line);
   background: var(--ih-card);
   font-size: 15px;
 }
@@ -2838,9 +2848,9 @@ fieldset { border: 1px solid var(--ih-line); }
   justify-content: center;
   gap: 8px;
   padding: 10px;
-  border-top: 1px solid var(--ih-ink);
-  background: var(--ih-ink);
-  color: var(--ih-on-ink);
+  border-top: 0;
+  background: #ffffff;
+  color: #111111;
 }
 
 .topic-view .post_contact img {
@@ -2853,14 +2863,48 @@ fieldset { border: 1px solid var(--ih-line); }
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--ih-on-ink) 40%, transparent);
-  color: var(--ih-on-ink);
+  border: 1px solid color-mix(in srgb, #111111 40%, transparent);
+  color: #111111;
 }
 
 .topic-view .post_contact a:hover {
   border-color: var(--post-color);
   background: var(--post-color);
   color: #fff;
+}
+
+:root[data-color-scheme="dark"] .topic-view .post_userinfo {
+  background: #111111;
+  color: #ffffff;
+  scrollbar-color: var(--post-color) #111111;
+}
+
+:root[data-color-scheme="dark"] .topic-view .post:before,
+:root[data-color-scheme="dark"] .topic-view .post_contact {
+  background: #111111;
+  color: #ffffff;
+}
+
+:root[data-color-scheme="dark"] .topic-view .post_contact a {
+  border-color: color-mix(in srgb, #ffffff 40%, transparent);
+  color: #ffffff;
+}
+
+:root[data-color-scheme="dark"] .topic-view .user_field {
+  border-color: #3b3b3b;
+  background: #111111;
+}
+
+:root[data-color-scheme="dark"] .topic-view .user_field:nth-child(even) {
+  background: color-mix(in srgb, var(--post-color) 12%, #111111);
+}
+
+:root[data-color-scheme="dark"] .topic-view .field_label {
+  color: #a8a8a8;
+}
+
+:root[data-color-scheme="dark"] .topic-view .field_content {
+  color: #ffffff;
 }
 
 .topic-view .post-no-career .post_profile,
