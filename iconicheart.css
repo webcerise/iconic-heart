@@ -2928,7 +2928,7 @@ fieldset { border: 1px solid var(--ih-line); }
 .profile_infos { padding: 36px; }
 .profile_contact { display: flex; gap: 8px; justify-content: flex-end; }
 .profile_content { max-height: 430px; margin-top: 30px; padding-right: 12px; overflow: auto; }
-.profile_field { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 18px; margin: 0; padding: 10px 0; border-top: 1px solid var(--ih-line); }
+.profile_field { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 18px; margin: 0;}
 .profile_field field { min-width: 0; }
 .userlist { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--ih-ink); border: 1px solid var(--ih-ink); }
 .userlist_profil { min-width: 0; background: var(--ih-card); }
