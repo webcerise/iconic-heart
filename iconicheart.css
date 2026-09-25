@@ -1866,6 +1866,14 @@ fieldset { border: 1px solid var(--ih-line); }
 }
 
 @media (min-width: 651px) {
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) { display: block; border: 0; }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum { display: grid; min-height: 210px; grid-template-columns: 82px minmax(0,1fr); grid-template-rows: minmax(165px,auto) auto; border: 1px solid var(--ih-ink); border-top: 6px solid var(--ih-ink); background: var(--ih-card); }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum-num { position: relative; top: auto; right: auto; display: grid; width: 100%; height: 100%; grid-column: 1; grid-row: 1/3; place-items: center; border: 0; border-right: 1px solid var(--ih-ink); background: var(--ih-ink); color: var(--ih-on-ink); }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum-num i { color: transparent; background: var(--ih-gradient); background-clip: text; -webkit-background-clip: text; font-size: 34px; }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum-head { min-height: 165px; grid-column: 2/-1; grid-row: 1; padding: 28px 32px; border-right: 0; }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forumtitle { max-width: 100%; font-size: clamp(40px,5.5vw,64px); line-height: .88; }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum-last { display: none; }
+  .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:only-child) .forum_details { width: 100%; grid-column: 2/-1; grid-row: 2; border-top: 1px solid var(--ih-ink); }
   .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:nth-child(2):last-child) { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; border: 0; }
   .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:has(> .forum:nth-child(3):last-child) { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; border: 0; }
   .category:not(:is(#c2,#c3,#c4,#c5,#c6,#c7)) .forums:is(:has(> .forum:nth-child(2):last-child),:has(> .forum:nth-child(3):last-child)) .forum { display: flex; min-width: 0; min-height: 235px; flex-direction: column; border: 1px solid var(--ih-ink); }
