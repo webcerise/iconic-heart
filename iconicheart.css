@@ -2893,7 +2893,7 @@ fieldset { border: 1px solid var(--ih-line); }
 #c6 .forum-num i { font-size: 27px; }
 #c6 .forum:nth-child(1) { --notice-accent: var(--ih-blue); }
 #c6 .forum:nth-child(2) { --notice-accent: var(--ih-pink); }
-#c6 .forum:nth-child(3) { --notice-accent: color-mix(in srgb, var(--ih-blue) 50%, var(--ih-pink)); }
+#c6 .forum:nth-child(3) { --notice-accent: #00ffa3; }
 #c6 .forum-head { display: flex; min-height: 0; grid-column: 2; grid-row: 1; padding: 16px 16px 7px; border: 0; }
 #c6 .forumtitle { font: 500 23px/.95 var(--ih-title); letter-spacing: -.025em; }
 #c6 .forum_stats { display: none; }
@@ -2901,7 +2901,7 @@ fieldset { border: 1px solid var(--ih-line); }
 #c6 .forum-last { display: grid; min-height: 0; grid-column: 2; grid-row: 2; grid-template-columns: 42px minmax(0,1fr); padding: 5px 16px 16px; border: 0; background: transparent; }
 #c6 .forum-last:before { content: "NOUVEAU MESSAGE"; grid-column: 1/-1; margin-bottom: 5px; color: var(--notice-accent); font: 500 15px var(--ih-mono); letter-spacing: .03em; text-transform: uppercase; }
 #c6 .forum:nth-child(2) .forum-last:before { content: "NOUVELLE PUBLICATION"; }
-#c6 .forum:nth-child(3) .forum-last:before { content: "NOUVEAU DIRECT"; }
+#c6 .forum:nth-child(3) .forum-last:before { content: "NOUVEAU STREAM"; }
 #c6 .forum_avatar { width: 38px; height: 38px; border-radius: 50%; }
 #c6 .forum_lastpost { width: 100%; padding-left: 8px; }
 #c6 .forum_lastpost .lastpost_link { color: #111; font-family: "DM Sans",Arial,sans-serif; font-weight: 700; text-transform: none; }
@@ -4241,7 +4241,8 @@ hr { border: 0; border-top: 1px solid var(--ih-line); }
 .notiffi_actions .button { width: 100%; min-height: 48px; border-radius: 0; }
 .notiffi_actions .button + .button { border-left: 0; }
 .switcheroo__squircles { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
-.switcheroo__squircle { position: relative; width: 62px; height: 62px; border-top: 1px solid var(--ih-line); cursor: pointer; }
+.switcheroo__squircle>*:first-child { anchor-name: --switcheroo-avatar; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 0; }
+.switcheroo__squircle { position: relative; width: 62px; height: 62px; cursor: pointer; }
 .switcheroo__squircle.active, .switcheroo__logo, .switcheroo__divider { display: none; }
 .switcheroo__avatar { width: 100%; height: 100%; overflow: hidden; }
 .switcheroo__avatar img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: filter .2s ease; }
@@ -10779,82 +10780,80 @@ blockquote:has(cite) div {
 .instagram-action-reply .instagram-notification,.instagram-action-reply.instagram-notification { border:1px solid #dbdbdb; border-radius:18px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
 @media (max-width:470px) { .instagram-feed-post { border-right:0; border-left:0; border-radius:0; } }
 
-/* TWITCH MOBILE */
-.twitch-profile,.twitch-action-reply { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #2f2f35; border-radius:22px; background:#0e0e10; color:#efeff1; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
-.twitch-profile *,.twitch-action-reply * { box-sizing:border-box; }
-.twitch-statusbar { display:flex; height:34px; align-items:center; justify-content:space-between; padding:5px 18px 0; font-size:12px; font-weight:700; }
-.twitch-statusbar div { display:flex; align-items:center; gap:5px; font-size:14px; }
-.twitch-topbar { display:grid; height:48px; grid-template-columns:40px minmax(0,1fr) auto; align-items:center; padding:0 11px; }
-.twitch-topbar>i { font-size:24px; }
-.twitch-topbar>b { overflow:hidden; font-size:16px; text-align:center; text-overflow:ellipsis; white-space:nowrap; }
-.twitch-topbar>span { display:flex; gap:17px; font-size:23px; }
-.twitch-profile-cover { display:block; width:100%; height:126px; object-fit:cover; }
-.twitch-profile-main { position:relative; padding:0 15px 17px; }
-.twitch-profile-avatar { display:block; width:82px; aspect-ratio:1; margin-top:-39px; object-fit:cover; border:4px solid #0e0e10; border-radius:50%; }
-.twitch-profile-identity { margin-top:9px; }
-.twitch-profile-identity div { display:flex; align-items:center; gap:6px; }
-.twitch-profile-identity h2 { margin:0; font:700 21px/1.15 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; letter-spacing:0; text-transform:none; }
-.twitch-profile-identity i { color:#a970ff; font-size:17px; }
-.twitch-profile-identity span { display:block; margin-top:4px; color:#adadb8; font-size:12px; }
-.twitch-profile-actions { display:grid; grid-template-columns:1fr 42px 1fr; gap:7px; margin-top:14px; }
-.twitch-profile-actions span { display:grid; min-height:36px; place-items:center; border-radius:4px; background:#26262c; font-size:13px; font-weight:700; }
-.twitch-profile-actions .is-primary { background:#9147ff; color:#fff; }
-.twitch-profile-bio { margin-top:15px; color:#dedee3; font-size:13px; line-height:1.5; white-space:pre-line; }
-.twitch-profile-bio a { color:#bf94ff; font-weight:600; }
-.twitch-profile-nav { display:flex; gap:22px; padding:0 15px; overflow-x:auto; border-bottom:1px solid #2f2f35; scrollbar-width:none; }
-.twitch-profile-nav::-webkit-scrollbar { display:none; }
-.twitch-profile-nav span { min-width:max-content; padding:13px 1px 11px; color:#adadb8; font-size:13px; font-weight:600; }
-.twitch-profile-nav .is-active { border-bottom:2px solid #a970ff; color:#bf94ff; }
-.twitch-feature { padding:16px 15px; }
-.twitch-feature-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; font-size:14px; font-weight:700; }
-.twitch-feature-label span { color:#adadb8; font-size:11px; font-weight:400; }
-.twitch-feature-player { position:relative; overflow:hidden; border-radius:6px; background:#18181b; }
-.twitch-feature-player>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.85; }
-.twitch-feature-player>i { position:absolute; top:50%; left:50%; display:grid; width:46px; aspect-ratio:1; place-items:center; border-radius:50%; background:#000b; color:#fff; font-size:23px; transform:translate(-50%,-50%); }
-.twitch-live-pill { position:absolute; top:9px; left:9px; padding:4px 7px; border-radius:4px; background:#eb0400; color:#fff; font-size:10px; font-weight:800; }
-.twitch-viewers { position:absolute; right:9px; bottom:8px; padding:3px 6px; border-radius:3px; background:#000b; color:#fff; font-size:10px; }
-.twitch-feature-copy { padding:11px 1px 2px; font-size:12px; line-height:1.4; }
-.twitch-feature-copy b { display:block; overflow:hidden; font-size:14px; text-overflow:ellipsis; white-space:nowrap; }
-.twitch-feature-copy span { color:#adadb8; }
-.twitch-video-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding:0 15px 18px; }
-.twitch-video-card { min-width:0; }
-.twitch-video-card div { position:relative; }
-.twitch-video-card img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; }
-.twitch-video-card small { position:absolute; right:5px; bottom:5px; padding:2px 4px; border-radius:2px; background:#000c; color:#fff; font-size:9px; }
-.twitch-video-card b { display:block; margin-top:7px; overflow:hidden; font-size:11px; text-overflow:ellipsis; white-space:nowrap; }
-.twitch-video-card span { color:#adadb8; font-size:10px; }
-.twitch-navbar { display:grid; height:57px; grid-template-columns:repeat(5,1fr); align-items:center; border-top:1px solid #2f2f35; background:#18181b; }
-.twitch-navbar span { display:grid; place-items:center; gap:2px; color:#adadb8; font-size:19px; }
-.twitch-navbar small { font-size:8px; }
-.twitch-navbar .is-active { color:#bf94ff; }
-.twitch-homebar { width:125px; height:5px; margin:3px auto 7px; border-radius:10px; background:#efeff1; }
-.twitch-stream-head { display:flex; min-height:58px; align-items:center; gap:10px; padding:9px 12px; }
-.twitch-stream-head img { width:40px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
-.twitch-stream-head div { flex:1; min-width:0; font-size:11px; }
-.twitch-stream-head b { display:block; overflow:hidden; font-size:13px; text-overflow:ellipsis; white-space:nowrap; }
-.twitch-stream-head>i { font-size:22px; }
-.twitch-stream-media { position:relative; background:#000; }
-.twitch-stream-media>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.9; }
-.twitch-stream-copy { padding:12px 14px 15px; font-size:12px; line-height:1.45; }
-.twitch-stream-copy b { display:block; margin-bottom:3px; font-size:14px; }
-.twitch-stream-copy span { color:#adadb8; }
-.twitch-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:9px; }
-.twitch-tags b { display:block; margin:0; padding:4px 7px; border-radius:20px; background:#26262c; color:#adadb8; font-size:9px; }
-.twitch-event { display:grid; min-height:70px; grid-template-columns:44px minmax(0,1fr); align-items:center; gap:11px; padding:10px 13px; }
-.twitch-event-avatar,.twitch-event-icon { display:block; width:42px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
-.twitch-event-icon { display:grid; place-items:center; background:#26262c; color:#bf94ff; font-size:22px; }
-.twitch-event-icon.is-sub { background:#9147ff; color:#fff; }
-.twitch-event-icon.is-bits { background:#1f69ff; color:#fff; }
-.twitch-event-copy { min-width:0; font-size:12px; line-height:1.4; }
-.twitch-event-copy b { color:#bf94ff; }
-.twitch-event-copy time { color:#adadb8; white-space:nowrap; }
-.twitch-chat { padding:10px 13px 15px; }
-.twitch-chat-title { display:flex; align-items:center; justify-content:space-between; padding:0 0 10px; border-bottom:1px solid #2f2f35; font-size:13px; font-weight:700; }
-.twitch-chat-message { padding:7px 2px; font-size:12px; line-height:1.45; }
-.twitch-chat-message time { margin-right:6px; color:#adadb8; font-size:10px; }
-.twitch-chat-message i { margin-right:3px; color:#bf94ff; }
-.twitch-chat-message b { margin-right:5px; color:var(--twitch-name-color,#00ad96); }
-.twitch-chat-message.is-highlighted { margin:4px 0; padding:8px; border-left:3px solid #9147ff; background:#26262c; }
-.twitch-reward { display:flex; align-items:center; gap:9px; margin:6px 0; padding:9px; border-radius:4px; background:#26262c; color:#dedee3; font-size:11px; }
-.twitch-reward i { color:#bf94ff; font-size:21px; }
-@media (max-width:470px) { .twitch-profile,.twitch-action-reply { border-right:0; border-left:0; border-radius:0; } }
+/* CHZZK MOBILE */
+.chzzk-profile,.chzzk-action-reply { --chzzk-green:#00ffa3; width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #303238; border-radius:22px; background:#141517; color:#f3f4f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.chzzk-profile *,.chzzk-action-reply * { box-sizing:border-box; }
+.chzzk-statusbar { display:flex; height:34px; align-items:center; justify-content:space-between; padding:5px 18px 0; font-size:12px; font-weight:700; }
+.chzzk-statusbar div { display:flex; align-items:center; gap:5px; font-size:14px; }
+.chzzk-topbar { display:grid; height:50px; grid-template-columns:1fr auto; align-items:center; padding:0 14px; }
+.chzzk-logo { color:var(--chzzk-green); font-size:20px; font-weight:900; letter-spacing:-1.5px; }
+.chzzk-topbar>span { display:flex; gap:18px; color:#f3f4f5; font-size:23px; }
+.chzzk-cover { display:block; width:100%; height:132px; object-fit:cover; }
+.chzzk-profile-main { position:relative; padding:0 15px 18px; }
+.chzzk-avatar { display:block; width:84px; aspect-ratio:1; margin-top:-42px; object-fit:cover; border:4px solid #141517; border-radius:50%; }
+.chzzk-identity { margin-top:8px; }
+.chzzk-identity div { display:flex; align-items:center; gap:6px; }
+.chzzk-identity h2 { margin:0; font:700 21px/1.15 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; letter-spacing:0; text-transform:none; }
+.chzzk-identity i { color:var(--chzzk-green); font-size:17px; }
+.chzzk-identity span { display:block; margin-top:4px; color:#a8abb2; font-size:12px; }
+.chzzk-actions { display:grid; grid-template-columns:1fr 1fr 40px; gap:7px; margin-top:14px; }
+.chzzk-actions span { display:grid; min-height:37px; place-items:center; border:1px solid #34363c; border-radius:7px; background:#24262a; font-size:13px; font-weight:700; }
+.chzzk-actions .is-primary { border-color:var(--chzzk-green); background:var(--chzzk-green); color:#111; }
+.chzzk-bio { margin-top:15px; color:#d9dade; font-size:13px; line-height:1.5; white-space:pre-line; }
+.chzzk-bio a { color:var(--chzzk-green); font-weight:600; }
+.chzzk-nav { display:flex; gap:22px; padding:0 15px; overflow-x:auto; border-bottom:1px solid #303238; scrollbar-width:none; }
+.chzzk-nav::-webkit-scrollbar { display:none; }
+.chzzk-nav span { min-width:max-content; padding:13px 1px 11px; color:#999ca4; font-size:13px; font-weight:650; }
+.chzzk-nav .is-active { border-bottom:2px solid var(--chzzk-green); color:#fff; }
+.chzzk-feature { padding:16px 15px; }
+.chzzk-feature-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; font-size:14px; font-weight:750; }
+.chzzk-feature-label span { color:#999ca4; font-size:11px; font-weight:400; }
+.chzzk-player { position:relative; overflow:hidden; border-radius:7px; background:#080808; }
+.chzzk-player>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.88; }
+.chzzk-player>i { position:absolute; top:50%; left:50%; display:grid; width:46px; aspect-ratio:1; place-items:center; border-radius:50%; background:#000b; color:#fff; font-size:23px; transform:translate(-50%,-50%); }
+.chzzk-live-pill { position:absolute; top:9px; left:9px; padding:4px 7px; border-radius:4px; background:#ff3145; color:#fff; font-size:10px; font-weight:850; }
+.chzzk-viewers { position:absolute; right:9px; bottom:8px; padding:3px 6px; border-radius:3px; background:#000c; color:#fff; font-size:10px; }
+.chzzk-feature-copy { padding:11px 1px 2px; font-size:12px; line-height:1.4; }
+.chzzk-feature-copy b { display:block; overflow:hidden; font-size:14px; text-overflow:ellipsis; white-space:nowrap; }
+.chzzk-feature-copy span { color:#999ca4; }
+.chzzk-video-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding:0 15px 18px; }
+.chzzk-video-card { min-width:0; }
+.chzzk-video-card div { position:relative; }
+.chzzk-video-card img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:5px; }
+.chzzk-video-card small { position:absolute; right:5px; bottom:5px; padding:2px 4px; border-radius:2px; background:#000c; color:#fff; font-size:9px; }
+.chzzk-video-card b { display:block; margin-top:7px; overflow:hidden; font-size:11px; text-overflow:ellipsis; white-space:nowrap; }
+.chzzk-video-card span { color:#999ca4; font-size:10px; }
+.chzzk-navbar { display:grid; height:58px; grid-template-columns:repeat(5,1fr); align-items:center; border-top:1px solid #303238; background:#1b1c1f; }
+.chzzk-navbar span { display:grid; place-items:center; gap:2px; color:#999ca4; font-size:20px; }
+.chzzk-navbar small { font-size:8px; }
+.chzzk-navbar .is-active { color:var(--chzzk-green); }
+.chzzk-homebar { width:125px; height:5px; margin:3px auto 7px; border-radius:10px; background:#f3f4f5; }
+.chzzk-stream-head { display:flex; min-height:58px; align-items:center; gap:10px; padding:9px 12px; }
+.chzzk-stream-head img { width:40px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.chzzk-stream-head div { flex:1; min-width:0; color:#a8abb2; font-size:11px; }
+.chzzk-stream-head b { display:block; overflow:hidden; color:#f3f4f5; font-size:13px; text-overflow:ellipsis; white-space:nowrap; }
+.chzzk-stream-head>i { font-size:22px; }
+.chzzk-stream-media { position:relative; background:#000; }
+.chzzk-stream-media>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.9; }
+.chzzk-stream-copy { padding:12px 14px 15px; font-size:12px; line-height:1.45; }
+.chzzk-stream-copy b { display:block; margin-bottom:3px; font-size:14px; }
+.chzzk-stream-copy>span { color:#999ca4; }
+.chzzk-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:9px; }
+.chzzk-tags b { display:block; margin:0; padding:4px 7px; border-radius:4px; background:#292b2f; color:#b7bac1; font-size:9px; }
+.chzzk-event { display:grid; min-height:70px; grid-template-columns:44px minmax(0,1fr); align-items:center; gap:11px; padding:10px 13px; }
+.chzzk-event-avatar,.chzzk-event-icon { display:block; width:42px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.chzzk-event-icon { display:grid; place-items:center; background:#292b2f; color:var(--chzzk-green); font-size:22px; }
+.chzzk-event-icon.is-sub { background:var(--chzzk-green); color:#111; }
+.chzzk-event-icon.is-cheese { background:#ffe259; color:#4c3d00; }
+.chzzk-event-copy { min-width:0; color:#d9dade; font-size:12px; line-height:1.4; }
+.chzzk-event-copy b { color:var(--chzzk-green); }
+.chzzk-event-copy time { color:#8b8e95; white-space:nowrap; }
+.chzzk-chat { padding:10px 13px 15px; }
+.chzzk-chat-title { display:flex; align-items:center; justify-content:space-between; padding:0 0 10px; border-bottom:1px solid #303238; font-size:13px; font-weight:750; }
+.chzzk-chat-message { padding:7px 2px; color:#d9dade; font-size:12px; line-height:1.45; }
+.chzzk-chat-message time { margin-right:6px; color:#7f8289; font-size:10px; }
+.chzzk-chat-message i { margin-right:3px; color:var(--chzzk-green); }
+.chzzk-chat-message b { margin-right:5px; color:var(--chzzk-name-color,#00d9a5); }
+.chzzk-chat-message.is-highlighted { margin:4px 0; padding:8px; border-left:3px solid var(--chzzk-green); background:#26282c; }
+@media (max-width:470px) { .chzzk-profile,.chzzk-action-reply { border-right:0; border-left:0; border-radius:0; } }
+
