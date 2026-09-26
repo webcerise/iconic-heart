@@ -3577,7 +3577,7 @@ fieldset { border: 1px solid var(--ih-line); }
   display: flex;
   min-width: 0;
   grid-column: 1;
-  grid-row: 3 / span 2;
+  grid-row: 3;
   align-self: start;
   flex-direction: column;
   padding: 0;
@@ -3669,7 +3669,14 @@ fieldset { border: 1px solid var(--ih-line); }
   min-height: 0;
   grid-column: 2;
   grid-row: 3;
-  border-bottom: 1px solid var(--ih-ink);
+  height: fit-content;
+}
+
+.post-main {
+  min-width: 0;
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
 }
 
 .post-gif {
