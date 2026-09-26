@@ -839,6 +839,14 @@ spoiler1:hover {
   font: italic 600 27px var(--ih-serif);
 }
 
+.ihp-career footer small {
+  display: block;
+  margin-top: 4px;
+  color: var(--ih-muted);
+  font: 500 10px / 1 var(--ih-mono);
+  text-transform: lowercase;
+}
+
 .ihp-fields {
   display: grid;
   grid-column: 1 / -1;
@@ -6960,6 +6968,47 @@ blockquote:has(cite) div {
   text-align: center;
 }
 
+.career-progress-deltas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--ih-ink);
+}
+
+.career-progress-deltas label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 66px;
+  min-height: 78px;
+  align-items: center;
+  border-right: 1px solid var(--ih-ink);
+}
+
+.career-progress-deltas label:last-child {
+  border-right: 0;
+}
+
+.career-progress-deltas span {
+  display: grid;
+  gap: 5px;
+  padding: 15px;
+  font: 500 15px var(--ih-mono);
+  text-transform: lowercase;
+}
+
+.career-progress-deltas small {
+  color: var(--ih-muted);
+  font-size: 10px;
+}
+
+.career-progress-deltas input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-left: 1px solid var(--ih-ink);
+  background: var(--ih-card);
+  color: var(--ih-ink);
+  text-align: center;
+}
+
 .career-activity-form {
   display: grid;
   grid-template-columns: 1.5fr .75fr;
@@ -7337,6 +7386,7 @@ blockquote:has(cite) div {
   .career-loader > div,
   .career-stats,
   .career-deltas,
+  .career-progress-deltas,
   .career-activity-form,
   .career-note,
   .career-preview {
@@ -7383,6 +7433,16 @@ blockquote:has(cite) div {
 
   .career-stats label:last-child,
   .career-deltas label:last-child {
+    border-bottom: 0;
+  }
+
+  .career-progress-deltas label,
+  .career-progress-deltas label:last-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--ih-ink);
+  }
+
+  .career-progress-deltas label:last-child {
     border-bottom: 0;
   }
 
