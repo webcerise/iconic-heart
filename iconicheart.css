@@ -2893,7 +2893,7 @@ fieldset { border: 1px solid var(--ih-line); }
 #c6 .forum-num i { font-size: 27px; }
 #c6 .forum:nth-child(1) { --notice-accent: var(--ih-blue); }
 #c6 .forum:nth-child(2) { --notice-accent: var(--ih-pink); }
-#c6 .forum:nth-child(3) { --notice-accent: #00ffa3; }
+#c6 .forum:nth-child(3) { --notice-accent: #21cb8e; }
 #c6 .forum-head { display: flex; min-height: 0; grid-column: 2; grid-row: 1; padding: 16px 16px 7px; border: 0; }
 #c6 .forumtitle { font: 500 23px/.95 var(--ih-title); letter-spacing: -.025em; }
 #c6 .forum_stats { display: none; }
