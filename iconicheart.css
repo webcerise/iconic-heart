@@ -2966,7 +2966,7 @@ fieldset { border: 1px solid var(--ih-line); }
 .hub-user img { width: 34px; height: 34px; object-fit: cover; filter: grayscale(1) contrast(1.08); }
 .hub-user a { display: block; max-width: 100%; padding: 7px 10px; overflow: hidden; font: 500 15px var(--ih-mono); letter-spacing: .06em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .hub-guest { display: flex; align-items: baseline; gap: 5px; padding: 7px 10px; border: 1px solid var(--ih-line); text-align: center; }
-.hub-guest strong { font: 500 27px var(--ih-title); }
+.hub-guest strong { font: 500 15px var(--ih-mono); }
 .hub-guest span { font: 15px var(--ih-mono); text-transform: uppercase; }
 .hub-new { padding: 24px 22px; border-bottom: 1px solid var(--ih-ink); }
 .hub-newpic { display: block; position: relative; margin-top: 2px; }
@@ -2976,7 +2976,7 @@ fieldset { border: 1px solid var(--ih-line); }
 .hub-newname { display: block; margin-top: 3px; font: italic 500 25px var(--ih-serif); }
 .hub-recent { min-width: 0; padding: 22px 28px 25px; border-right: 1px solid var(--ih-ink); }
 .hub-recent .hub-label { margin-bottom: 14px; }
-.hub-recentlist { max-height: 70px; overflow: auto; padding-right: 10px; font: 15px/1.9 var(--ih-mono); }
+.hub-recentlist { max-height: 70px; overflow: auto; padding-right: 10px; font: 15px/1.9 var(--ih-mono); text-transform: lowercase; }
 .hub-recenttext { color: var(--ih-muted); text-transform: uppercase; }
 .hub-recentlist .separator:last-child { display: none; }
 .hub-groups { display: grid; grid-template-columns: repeat(2,1fr); }
@@ -3501,6 +3501,11 @@ fieldset { border: 1px solid var(--ih-line); }
 
 .topic-view .poster-list {
   margin: 0;
+}
+
+.poster-count {
+  display: none;
+  margin-left: 8px;
 }
 
 .topic-page-actions {
@@ -10857,4 +10862,39 @@ blockquote:has(cite) div {
 .chzzk-chat-message b { margin-right:5px; color:var(--chzzk-name-color,#00d9a5); }
 .chzzk-chat-message.is-highlighted { margin:4px 0; padding:8px; border-left:3px solid var(--chzzk-green); background:#26282c; }
 @media (max-width:470px) { .chzzk-profile,.chzzk-action-reply { border-right:0; border-left:0; border-radius:0; } }
+
+/* CONVERSATIONS SMS */
+.sms-conversation .topic-head { display:none; }
+.sms-conversation > .topic-page-actions:not(.bottom) { display:none; }
+.sms-conversation .topic-posts { box-sizing:border-box; width:min(100%,460px); aspect-ratio:2064/4276; margin:0 auto 80px; padding:clamp(58px,14.3vw,65px) clamp(16px,4.2vw,19px) clamp(37px,9.3vw,42px); overflow:hidden; border:0; background:url("https://cdn.jsdelivr.net/gh/webcerise/iconic-heart@main/images/phone.png") center/100% 100% no-repeat; color:#f5f5f7; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; counter-reset:none; }
+.sms-phone-screen { display:flex; width:100%; height:100%; flex-direction:column; overflow-x:hidden; overflow-y:auto; border-radius:clamp(32px,9vw,42px); background:#181619; color:#f5f5f7; scrollbar-width:none; color-scheme:dark; }
+.sms-phone-screen::-webkit-scrollbar { display:none; }
+.sms-phone-head { position:sticky; z-index:5; top:0; border-bottom:1px solid rgba(84,84,88,.55); background:rgba(24,22,25,.94); color:#f5f5f7; backdrop-filter:blur(18px); }
+.sms-contact { position:relative; display:grid; min-height:48px; grid-template-columns:34px minmax(0,1fr) 34px; grid-template-rows:minmax(48px,auto); place-items:center; padding:5px 12px 7px; }
+.sms-contact > .ph-caret-left { display:grid; grid-column:1; grid-row:1/3; align-self:stretch; justify-self:start; place-items:center; color:#087cff; font-size:28px; line-height:1; }
+.sms-contact > .ph-video-camera { display:grid; grid-column:3; grid-row:1/3; align-self:stretch; place-items:center; color:#087cff; font-size:24px; line-height:1; }
+.sms-contact strong { grid-column:2; grid-row:1; max-width:100%; padding:7px 5px; overflow:visible; font-size:24px; line-height:1; text-align:center; overflow-wrap:anywhere; white-space:normal; }
+.sms-conversation .sms-empty-post { display:none; }
+.sms-conversation .sms-post { display:block; min-height:0; margin:0; padding:0; border:0; background:transparent; color:#f5f5f7; counter-increment:none; }
+.sms-conversation .sms-post:before,.sms-conversation .sms-post .post_details,.sms-conversation .sms-post .post-id,.sms-conversation .sms-post .post_profile,.sms-conversation .sms-post .post-meta,.sms-conversation .sms-post .post_signature { display:none!important; }
+.sms-conversation .sms-post .post-main,.sms-conversation .sms-post .post_message,.sms-conversation .sms-post .post_message > div:first-child { display:block; width:100%; max-width:none; margin:0; padding:0; border:0; background:transparent; color:inherit; font:inherit; }
+.sms-message-list { display:flex; width:100%; flex-direction:column; gap:5px; padding:7px 14px; }
+.sms-message-row { display:flex; width:100%; align-items:flex-end; gap:7px; }
+.sms-message-row.is-first { margin-top:10px; }
+.sms-message-row.gauche { justify-content:flex-start; }
+.sms-message-row.droite { justify-content:flex-end; }
+.sms-message-avatar { display:grid; width:35px; height:35px; flex:0 0 35px; place-items:center; overflow:hidden; border-radius:50%; background:#3a3a3c; color:#fff; object-fit:cover; font-size:15px; }
+.sms-message-list sms { position:relative; display:block; width:fit-content; max-width:calc(76% - 35px); padding:8px 12px; border-radius:18px; font-size:15px; line-height:1.32; overflow-wrap:anywhere; white-space:pre-wrap; }
+.sms-message-list sms.gauche { border-bottom-left-radius:5px; background:#2c2c2e; color:#f5f5f7; }
+.sms-message-list sms.droite { border-bottom-right-radius:5px; background:#0a84ff; color:#fff; }
+.sms-message-row.gauche + .sms-message-row.gauche sms { border-top-left-radius:5px; }
+.sms-message-row.droite + .sms-message-row.droite sms { border-top-right-radius:5px; }
+.sms-message-list sms img { border-radius:20px; }
+.sms-edit { position:absolute; top:50%; display:grid; width:23px; height:23px; place-items:center; border-radius:50%; background:#2c2c2e; color:#98989d; font-size:11px; opacity:0; transform:translateY(-50%); transition:opacity .2s; }
+.sms-message-list sms.gauche .sms-edit { right:-30px; }
+.sms-message-list sms.droite .sms-edit { left:-30px; }
+.sms-message-list sms:hover .sms-edit { opacity:1; }
+.sms-phone-composer { position:sticky; z-index:5; bottom:0; display:grid; min-height:62px; flex:none; grid-template-columns:32px minmax(0,1fr) 28px; align-items:center; gap:8px; margin-top:auto; padding:8px 14px 14px; border-top:1px solid rgba(84,84,88,.55); background:#181619; color:#98989d; }
+.sms-phone-composer > i { font-size:22px; }
+.sms-phone-composer > span { display:flex; min-height:34px; align-items:center; padding:0 13px; border:1px solid #48484a; border-radius:18px; background:#181619; color:#98989d; font-size:14px; }
 
