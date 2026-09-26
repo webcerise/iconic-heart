@@ -302,6 +302,7 @@ spoiler1:hover {
 .shop-product > button { padding: 13px 16px; border: 0; border-top: 1px solid var(--ih-line); border-left: 1px solid var(--ih-line); border-radius: 0; background: var(--ih-ink); color: var(--ih-on-ink); font: 500 15px var(--ih-mono); text-transform: uppercase; }
 
 .shop-cart-empty { display: grid; min-height: 170px; place-items: center; align-content: center; gap: 10px; color: var(--ih-muted); font: 500 15px var(--ih-mono); text-transform: uppercase; }
+.shop-cart-empty[hidden] { display: none !important; }
 .shop-cart-empty i { font-size: 34px; }
 .shop-cart-item { border-bottom: 1px solid var(--ih-ink); }
 .shop-cart-item > header { display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; min-height: 82px; background: var(--ih-ink); color: var(--ih-on-ink); }
@@ -319,6 +320,17 @@ spoiler1:hover {
 .shop-project-fields { grid-column: 1 / -1; }
 .shop-cart-details .is-wide { border-right: 0; }
 .shop-project-fields label:nth-child(even) { border-right: 0; }
+.shop-dice-reminder {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  border-top: 1px solid var(--ih-ink);
+  border-bottom: 1px solid var(--ih-ink);
+  background: color-mix(in srgb, var(--ih-pink) 10%, var(--ih-card));
+}
+.shop-dice-reminder > i { display: grid; place-items: center; border-right: 1px solid var(--ih-ink); color: var(--ih-pink); font-size: 28px; }
+.shop-dice-reminder > div { display: flex; flex-direction: column; gap: 7px; padding: 17px 20px; }
+.shop-dice-reminder span { color: var(--ih-muted); font: 500 15px var(--ih-mono); letter-spacing: .06em; text-transform: uppercase; }
+.shop-dice-reminder b { line-height: 1.55; }
 .shop-cart-total { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px; background: var(--ih-paper); font: 500 15px var(--ih-mono); text-transform: uppercase; }
 .shop-cart-total b { color: var(--ih-pink); font: italic 500 38px var(--ih-serif); }
 .shop-generate,
@@ -345,6 +357,8 @@ spoiler1:hover {
 .shop-order article > div > div { min-width: 0; padding: 14px 18px; border-top: 1px solid var(--ih-line); border-right: 1px solid var(--ih-line); }
 .shop-order article > div span { display: block; color: var(--ih-muted); font: 500 15px var(--ih-mono); text-transform: uppercase; }
 .shop-order article > div b { display: block; margin-top: 5px; overflow-wrap: anywhere; font-weight: 600; }
+.shop-order-dice { display: flex; align-items: center; gap: 12px; padding: 15px 18px; border-top: 1px solid var(--ih-ink); background: color-mix(in srgb, var(--ih-pink) 10%, var(--ih-card)); line-height: 1.5; }
+.shop-order-dice i { flex: 0 0 auto; color: var(--ih-pink); font-size: 24px; }
 .shop-order > footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; background: var(--ih-ink); color: var(--ih-on-ink); font: 500 15px var(--ih-mono); text-transform: uppercase; }
 .shop-order > footer b { color: var(--ih-pink); font: italic 500 32px var(--ih-serif); }
 
@@ -2709,13 +2723,14 @@ fieldset { border: 1px solid var(--ih-line); }
 #c2 .forum_details { padding: 0; }
 #c2 .forum_sub a { border-color: color-mix(in srgb, var(--start-accent) 55%, transparent); }
 
-#c3 .forums { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); grid-template-rows: 280px 280px; gap: 12px; border: 0; }
+#c3 .forums { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); grid-template-rows: 280px 280px 100px; gap: 12px; border: 0; }
 #c3 .forum { display: flex; min-width: 0; min-height: 0; flex-direction: column; border: 1px solid color-mix(in srgb, var(--ih-ink) 34%, transparent); background: color-mix(in srgb, var(--ih-card) 66%, transparent); backdrop-filter: blur(15px); }
 #c3 .forum:nth-child(1) { grid-column: 1/5; grid-row: 1; }
-#c3 .forum:nth-child(1) .forum_content { border-right: 0; height: 65px; }
+#c3 .forum:nth-child(1) .forum_content { height: 65px; border-right: 0; }
 #c3 .forum:nth-child(2) { grid-column: 5/8; grid-row: 1/3; background: var(--ih-ink); color: var(--ih-on-ink); }
 #c3 .forum:nth-child(3) { grid-column: 1/3; grid-row: 2; }
 #c3 .forum:nth-child(4) { grid-column: 3/5; grid-row: 2; }
+#c3 .forum:nth-child(5) { grid-column: 1/8; grid-row: 3; }
 #c3 .forum-num { position: absolute; top: 15px; right: 16px; display: block; border: 0; color: var(--ih-ink); }
 #c3 .forum-num i { font-size: 72px; }
 #c3 .forum-head { min-height: 0; justify-content: flex-end; padding: 20px 60px 18px 20px; border-right: 0; border-bottom: 1px solid var(--ih-line); }
@@ -2734,7 +2749,6 @@ fieldset { border: 1px solid var(--ih-line); }
 #c3 .forum:nth-child(2) .forum-num { color: var(--ih-on-ink); }
 #c3 .forum:nth-child(2) .forum-head, #c3 .forum:nth-child(2) .forum-last, #c3 .forum:nth-child(2) .forum_sub a { border-color: color-mix(in srgb, var(--ih-on-ink) 24%, transparent); }
 #c3 .forum:nth-child(1) .forum-head { border-right: 0; }
-#c3 .forum:nth-child(1) .forum_content { border-right: 0; }
 #c3 .forum:nth-child(2) .forum-head { min-height: 165px; padding: 35px 64px 24px 24px; }
 #c3 .forum:nth-child(2) .forumtitle { font-size: clamp(36px,4.4vw,60px); }
 #c3 .forum:nth-child(2) .forum_content { flex: 1; }
@@ -2745,6 +2759,13 @@ fieldset { border: 1px solid var(--ih-line); }
 #c3 .forum:nth-child(4) .forum_content { display: none; }
 #c3 .forum:nth-child(4) .forum-last { flex: 1; border-top: 0; }
 #c3 .forum:nth-child(4):before { content: ""; position: absolute; top: -1px; right: -1px; left: -1px; z-index: 2; height: 5px; background: var(--ih-gradient); }
+#c3 .forum:nth-child(5) { display: grid; grid-template-columns: minmax(0,1fr) 320px; grid-template-rows: 1fr; }
+#c3 .forum:nth-child(5) .forum-head { display: flex; min-height: 100px; grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: center; padding: 20px; border-bottom: 0; }
+#c3 .forum:nth-child(5) .forumtitle { font-size: clamp(34px,4vw,52px); }
+#c3 .forum:nth-child(5) .forum-num { top: 11px; right: 336px; }
+#c3 .forum:nth-child(5) .forum_content { display: none; }
+#c3 .forum:nth-child(5) .forum-last { min-height: 0; grid-column: 2; grid-row: 1; border-top: 0; border-left: 1px solid var(--ih-line); }
+#c3 .forum:nth-child(5) .forum_details { grid-column: 1/-1; }
 
 #c4 .forums { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; border: 0; }
 #c4 .forum { display: flex; min-width: 0; min-height: 370px; flex-direction: column; border: 1px solid color-mix(in srgb, var(--ih-ink) 32%, transparent); border-top: 6px solid var(--agency); background: color-mix(in srgb, var(--ih-card) 68%, transparent); }
@@ -4252,17 +4273,18 @@ hr { border: 0; border-top: 1px solid var(--ih-line); }
   #c2 .forum-last { padding-right: 18px; padding-left: 18px; }
   #c2 .forum_details { padding: 0; }
   #c3 .forums { display: block; }
-  #c3 .forum, #c3 .forum:nth-child(1), #c3 .forum:nth-child(2), #c3 .forum:nth-child(3), #c3 .forum:nth-child(4) { display: flex; width: 100%; min-height: 0; margin-bottom: 12px; }
+  #c3 .forum, #c3 .forum:nth-child(1), #c3 .forum:nth-child(2), #c3 .forum:nth-child(3), #c3 .forum:nth-child(4), #c3 .forum:nth-child(5) { display: flex; width: 100%; min-height: 0; margin-bottom: 12px; }
   #c3 .forum:last-child { margin-bottom: 0; }
   #c3 .forum-num { right: 15px; }
-  #c3 .forum-head, #c3 .forum:nth-child(1) .forum-head, #c3 .forum:nth-child(2) .forum-head, #c3 .forum:nth-child(3) .forum-head, #c3 .forum:nth-child(4) .forum-head { min-height: 100px; padding: 18px 55px 16px 17px; border-right: 0; border-bottom: 1px solid var(--ih-line); }
+  #c3 .forum:nth-child(5) .forum-num { right: 15px; }
+  #c3 .forum-head, #c3 .forum:nth-child(1) .forum-head, #c3 .forum:nth-child(2) .forum-head, #c3 .forum:nth-child(3) .forum-head, #c3 .forum:nth-child(4) .forum-head, #c3 .forum:nth-child(5) .forum-head { min-height: 100px; padding: 18px 55px 16px 17px; border-right: 0; border-bottom: 1px solid var(--ih-line); }
   #c3 .forumtitle { font-size: clamp(27px,8vw,38px); }
   #c3 .forum:nth-child(2) .forumtitle { font-size: clamp(30px,10vw,44px); }
   #c3 .forum_content, #c3 .forum:nth-child(1) .forum_content, #c3 .forum:nth-child(2) .forum_content { display: block; min-height: 72px; border-right: 0; }
-  #c3 .forum:nth-child(3) .forum_content, #c3 .forum:nth-child(4) .forum_content { display: none; }
+  #c3 .forum:nth-child(3) .forum_content, #c3 .forum:nth-child(4) .forum_content, #c3 .forum:nth-child(5) .forum_content { display: none; }
   #c3 .forum_desc { padding: 15px 17px; }
-  #c3 .forum-last, #c3 .forum:nth-child(1) .forum-last, #c3 .forum:nth-child(2) .forum-last, #c3 .forum:nth-child(3) .forum-last, #c3 .forum:nth-child(4) .forum-last { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 13px 16px; text-align: left; }
-  #c3 .forum_details, #c3 .forum:nth-child(1) .forum_details, #c3 .forum:nth-child(2) .forum_details, #c3 .forum:nth-child(3) .forum_details, #c3 .forum:nth-child(4) .forum_details { margin-top: auto; }
+  #c3 .forum-last, #c3 .forum:nth-child(1) .forum-last, #c3 .forum:nth-child(2) .forum-last, #c3 .forum:nth-child(3) .forum-last, #c3 .forum:nth-child(4) .forum-last, #c3 .forum:nth-child(5) .forum-last { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 13px 16px; text-align: left; }
+  #c3 .forum_details, #c3 .forum:nth-child(1) .forum_details, #c3 .forum:nth-child(2) .forum_details, #c3 .forum:nth-child(3) .forum_details, #c3 .forum:nth-child(4) .forum_details, #c3 .forum:nth-child(5) .forum_details { margin-top: auto; }
   #c3 .forum:nth-child(3) .forum-last { display: none; }
   #c4 .forums { display: block; }
   #c4 .forum { width: 100%; min-height: 0; margin-bottom: 12px; }
@@ -9290,7 +9312,7 @@ blockquote:has(cite) div {
   padding: 16px 20px;
   overflow-wrap: anywhere;
   font: 500 15px / 1.7 "DM Sans", Arial, sans-serif;
-  white-space: normal;
+  white-space: pre-line;
 }
 
 .presentation-free {
@@ -9302,12 +9324,17 @@ blockquote:has(cite) div {
   padding: clamp(24px, 5vw, 46px);
   overflow-wrap: anywhere;
   font: 400 15px / 1.8 "DM Sans", Arial, sans-serif;
+  white-space: pre-line;
 }
 
 .presentation-free-content img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.idol-result-grid br {
+  display: none;
 }
 
 .presentation-distribution {
@@ -9514,6 +9541,7 @@ blockquote:has(cite) div {
   padding: 15px 18px;
   overflow-wrap: anywhere;
   font: 400 15px / 1.7 "DM Sans", Arial, sans-serif;
+  white-space: pre-line;
 }
 
 @media (max-width: 700px) {
@@ -10263,4 +10291,7 @@ blockquote:has(cite) div {
     grid-row: auto;
     margin-bottom: 10px;
   }
+}
+.discover-event img {
+  display: none;
 }
