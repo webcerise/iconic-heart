@@ -1061,6 +1061,54 @@ spoiler1:hover {
   color: var(--ih-ink);
 }
 
+.group-directory-entry.has-image {
+  display: grid;
+  min-height: 120px;
+  grid-template-columns: 140px minmax(0, 1fr) 190px;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  border-left: 6px solid var(--group-entry-color, var(--group-directory-color));
+  background: color-mix(in srgb, var(--group-entry-color, var(--group-directory-color)) 7%, var(--ih-card));
+}
+
+.group-directory-entry.has-image > img {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.group-directory-entry.has-image > div {
+  justify-content: center;
+  padding: 20px;
+  border-left: 1px solid var(--ih-ink);
+}
+
+.group-directory-entry.has-image > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  gap: 7px 12px;
+  padding: 18px;
+  border-left: 1px solid var(--ih-ink);
+}
+
+.group-directory-entry.has-image > a span {
+  grid-column: 1 / -1;
+  color: var(--group-entry-color, var(--ih-muted));
+}
+
+.group-directory-entry.has-image > a b {
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.group-directory-entry.has-image > a i {
+  align-self: center;
+  font-size: 19px;
+}
+
 .group-directory-empty {
   min-height: 150px;
   margin: 0;
@@ -1437,6 +1485,16 @@ spoiler1:hover {
   .group-directory-section:last-child {
     border-right: 0;
     border-bottom: 1px solid var(--ih-ink);
+  }
+
+  .group-directory-entry.has-image {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
+  .group-directory-entry.has-image > a {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--ih-ink);
+    border-left: 0;
   }
 }
 
@@ -2527,6 +2585,7 @@ spoiler1:hover {
     height: 320px;
   }
 }
+
 :root[data-color-scheme="dark"] {
   --ih-paper: #101010;
   --ih-card: #191919;
@@ -10383,3 +10442,419 @@ blockquote:has(cite) div {
 .discover-event img {
   display: none;
 }
+
+/* PROFIL INSTAGRAM */
+.instagram-profile {
+  --instagram-color: var(--ih-blue);
+  width: min(100%, 760px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--ih-ink);
+  background: var(--ih-card);
+  color: var(--ih-ink);
+}
+
+.instagram-profile * {
+  box-sizing: border-box;
+}
+
+.instagram-profile-head {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 30px;
+  padding: 34px;
+  border-bottom: 1px solid var(--ih-line);
+}
+
+.instagram-profile-avatar {
+  display: block;
+  width: 154px;
+  aspect-ratio: 1;
+  align-self: center;
+  justify-self: center;
+  object-fit: cover;
+  border: 5px solid var(--ih-card);
+  border-radius: 50%;
+  outline: 3px solid var(--instagram-color);
+}
+
+.instagram-profile-info {
+  min-width: 0;
+}
+
+.instagram-profile-name {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.instagram-profile-name h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font: 500 34px / 1 var(--ih-title);
+  letter-spacing: -.035em;
+  text-transform: lowercase;
+}
+
+.instagram-profile-name > i {
+  color: var(--instagram-color);
+  font-size: 20px;
+}
+
+.instagram-profile-name > span {
+  padding: 5px 8px;
+  border: 1px solid var(--ih-line);
+  font: 500 10px var(--ih-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.instagram-profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 23px 0;
+}
+
+.instagram-profile-stats div {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.instagram-profile-stats b {
+  font: 600 17px var(--ih-mono);
+}
+
+.instagram-profile-bio {
+  font: 400 14px / 1.65 "DM Sans", Arial, sans-serif;
+}
+
+.instagram-profile-bio strong,
+.instagram-profile-bio a {
+  font-weight: 700;
+}
+
+.instagram-profile-bio a {
+  color: var(--instagram-color);
+}
+
+.instagram-highlights {
+  display: flex;
+  gap: 20px;
+  padding: 24px 30px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--ih-line);
+  scrollbar-width: thin;
+}
+
+.instagram-highlight {
+  display: grid;
+  min-width: 78px;
+  justify-items: center;
+  gap: 9px;
+}
+
+.instagram-highlight img {
+  display: block;
+  width: 64px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 3px solid var(--ih-card);
+  border-radius: 50%;
+  outline: 1px solid var(--ih-line);
+}
+
+.instagram-highlight b {
+  max-width: 78px;
+  overflow: hidden;
+  font: 500 10px var(--ih-mono);
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.instagram-profile-tabs {
+  display: grid;
+  height: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--ih-line);
+}
+
+.instagram-profile-tabs span {
+  display: grid;
+  place-items: center;
+  color: var(--ih-muted);
+  font-size: 20px;
+}
+
+.instagram-profile-tabs .is-active {
+  box-shadow: inset 0 -3px var(--instagram-color);
+  color: var(--ih-ink);
+}
+
+.instagram-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  background: var(--ih-card);
+}
+
+.instagram-profile-post {
+  position: relative;
+  display: block;
+  min-width: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  color: #fff;
+}
+
+.instagram-profile-post > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+
+.instagram-profile-post > span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: color-mix(in srgb, var(--ih-ink) 70%, transparent);
+  font: 600 13px var(--ih-mono);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.instagram-profile-post:hover > img {
+  transform: scale(1.035);
+}
+
+.instagram-profile-post:hover > span {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .instagram-profile-head {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    padding: 24px 18px;
+  }
+
+  .instagram-profile-avatar {
+    width: 82px;
+  }
+
+  .instagram-profile-name h2 {
+    font-size: 27px;
+  }
+
+  .instagram-profile-name > span {
+    display: none;
+  }
+
+  .instagram-profile-stats {
+    grid-column: 1 / -1;
+    gap: 13px;
+    margin: 17px 0;
+  }
+
+  .instagram-profile-stats div {
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .instagram-highlights {
+    padding: 20px 16px;
+  }
+}
+
+/* PROFIL INSTAGRAM — AFFICHAGE IPHONE FINAL */
+.instagram-profile { width:min(100%,430px); border:1px solid #dbdbdb; border-radius:28px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-statusbar { display:flex; height:34px; align-items:center; justify-content:space-between; padding:5px 18px 0; font-size:12px; font-weight:700; }
+.instagram-statusbar div { display:flex; align-items:center; gap:5px; font-size:14px; }
+.instagram-topbar { display:grid; height:48px; grid-template-columns:42px minmax(0,1fr) auto; align-items:center; padding:0 10px; }
+.instagram-topbar>i { font-size:25px; }
+.instagram-topbar>div { display:flex; min-width:0; align-items:center; justify-content:center; gap:4px; }
+.instagram-topbar b { overflow:hidden; font-size:16px; text-overflow:ellipsis; white-space:nowrap; }
+.instagram-topbar>span { display:flex; gap:18px; font-size:25px; }
+.instagram-profile .instagram-profile-head { display:block; padding:7px 16px 12px; border:0; }
+.instagram-profile-summary { display:grid; grid-template-columns:96px minmax(0,1fr); align-items:center; gap:17px; }
+.instagram-avatar-wrap { display:grid; width:90px; aspect-ratio:1; place-items:center; border-radius:50%; background:linear-gradient(45deg,#ffd600,#ff7a00,#ff0169,#d300c5,#7638fa); }
+.instagram-profile .instagram-profile-avatar { width:84px; border:3px solid #fff; border-radius:50%; outline:0; }
+.instagram-profile .instagram-profile-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:0; }
+.instagram-profile .instagram-profile-stats div { display:flex; min-width:0; flex-direction:column; align-items:center; gap:0; font-size:12px; line-height:1.15; }
+.instagram-profile .instagram-profile-stats b { font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-profile .instagram-profile-stats span { margin-top:3px; }
+.instagram-profile .instagram-profile-bio { margin-top:13px; font:400 13px/1.42 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; white-space:pre-line; }
+.instagram-profile .instagram-profile-bio strong { display:inline-flex; align-items:center; gap:4px; }
+.instagram-profile .instagram-profile-bio strong i { color:#0095f6; font-size:14px; }
+.instagram-profile .instagram-profile-bio a { color:#00376b; font-weight:600; }
+.instagram-profile-actions { display:grid; grid-template-columns:1fr 1fr 34px; gap:6px; margin-top:14px; }
+.instagram-profile-actions span { display:grid; min-height:32px; place-items:center; border-radius:8px; background:#efefef; font-size:13px; font-weight:600; }
+.instagram-profile-actions span:last-child { font-size:17px; }
+.instagram-profile .instagram-highlights { gap:15px; padding:9px 15px 14px; border:0; scrollbar-width:none; }
+.instagram-profile .instagram-highlights::-webkit-scrollbar { display:none; }
+.instagram-profile .instagram-highlight { min-width:68px; gap:7px; }
+.instagram-profile .instagram-highlight img { width:63px; border:3px solid #fff; outline:1px solid #c7c7c7; }
+.instagram-profile .instagram-highlight b { max-width:68px; font:400 11px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; text-transform:none; }
+.instagram-profile .instagram-profile-tabs { height:43px; border-top:1px solid #efefef; border-bottom:0; }
+.instagram-profile .instagram-profile-tabs span { font-size:23px; }
+.instagram-profile .instagram-profile-tabs .is-active { border-bottom:1px solid #000; box-shadow:none; color:#000; }
+.instagram-profile .instagram-profile-grid { gap:2px; }
+.instagram-profile .instagram-profile-post>span { background:rgba(0,0,0,.55); font:700 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-navbar { display:grid; height:54px; grid-template-columns:repeat(5,1fr); align-items:center; background:#fff; font-size:25px; }
+.instagram-navbar span { display:grid; place-items:center; }
+.instagram-navbar img { display:block; width:25px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.instagram-homebar { width:125px; height:5px; margin:2px auto 7px; border-radius:10px; background:#000; }
+@media (max-width:470px) { .instagram-profile { border-right:0; border-left:0; border-radius:0; } .instagram-profile .instagram-profile-head { padding-right:13px; padding-left:13px; } .instagram-profile-summary { grid-template-columns:82px minmax(0,1fr); gap:10px; } .instagram-avatar-wrap { width:76px; } .instagram-profile .instagram-profile-avatar { width:70px; } .instagram-profile .instagram-profile-stats span { font-size:11px; } }
+
+/* INTERACTIONS INSTAGRAM */
+.instagram-activity { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #dbdbdb; border-radius:20px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-activity * { box-sizing:border-box; }
+.instagram-activity-head { display:flex; min-height:52px; align-items:center; justify-content:space-between; padding:0 16px; border-bottom:1px solid #efefef; }
+.instagram-activity-head b { font-size:16px; }
+.instagram-activity-head i { font-size:23px; }
+.instagram-activity-label { padding:15px 16px 7px; font-size:14px; font-weight:700; }
+.instagram-notification { display:grid; min-height:68px; grid-template-columns:46px minmax(0,1fr) auto; align-items:center; gap:11px; padding:8px 14px; }
+.instagram-notification-avatar { display:block; width:44px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.instagram-notification-text { min-width:0; font-size:13px; line-height:1.35; }
+.instagram-notification-text b { font-weight:700; }
+.instagram-notification-text time { color:#737373; white-space:nowrap; }
+.instagram-notification-media { display:block; width:44px; aspect-ratio:1; object-fit:cover; }
+.instagram-notification-action { min-width:82px; padding:7px 12px; border-radius:8px; background:#0095f6; color:#fff; font-size:12px; font-weight:700; text-align:center; }
+.instagram-notification-action.is-muted { background:#efefef; color:#000; }
+.instagram-notification-icon { display:grid; width:44px; aspect-ratio:1; place-items:center; border-radius:50%; background:#efefef; font-size:22px; }
+.instagram-notification-icon.is-like { background:#ffe8ef; color:#ff3040; }
+.instagram-notification-icon.is-live { background:linear-gradient(135deg,#7638fa,#ff3040); color:#fff; }
+.instagram-comment-thread { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #dbdbdb; border-radius:20px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-comment-head { display:grid; height:52px; grid-template-columns:36px 1fr 36px; place-items:center; border-bottom:1px solid #efefef; font-size:22px; }
+.instagram-comment-head b { font-size:16px; }
+.instagram-comment { display:grid; grid-template-columns:38px minmax(0,1fr) 24px; gap:10px; padding:14px 15px; }
+.instagram-comment.is-reply { margin-left:42px; padding-top:5px; }
+.instagram-comment-avatar { display:block; width:36px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.instagram-comment-body { min-width:0; font-size:13px; line-height:1.4; }
+.instagram-comment-body b { margin-right:5px; font-weight:700; }
+.instagram-comment-body footer { display:flex; flex-wrap:wrap; gap:12px; margin-top:7px; color:#737373; font-size:11px; font-weight:600; }
+.instagram-comment>i { padding-top:4px; font-size:15px; }
+.instagram-story-message { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #dbdbdb; border-radius:20px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-story-preview { position:relative; height:310px; background:#111; }
+.instagram-story-preview>img { display:block; width:100%; height:100%; object-fit:cover; opacity:.9; }
+.instagram-story-user { position:absolute; top:15px; left:15px; display:flex; align-items:center; gap:9px; color:#fff; font-size:12px; font-weight:700; text-shadow:0 1px 4px #000; }
+.instagram-story-user img { width:34px; aspect-ratio:1; object-fit:cover; border:2px solid #fff; border-radius:50%; }
+.instagram-story-reaction { display:flex; align-items:center; gap:11px; padding:14px; font-size:13px; }
+.instagram-story-reaction>img { width:40px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.instagram-story-reaction div { flex:1; }
+.instagram-story-reaction b { display:block; }
+.instagram-story-reaction span { color:#737373; }
+.instagram-story-reaction>i { color:#ff3040; font-size:27px; }
+@media (max-width:470px) { .instagram-activity,.instagram-comment-thread,.instagram-story-message { border-right:0; border-left:0; border-radius:0; } }
+
+.instagram-feed-post { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #dbdbdb; border-radius:20px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.instagram-feed-post * { box-sizing:border-box; }
+.instagram-feed-author { display:flex; min-height:57px; align-items:center; gap:10px; padding:8px 12px; }
+.instagram-feed-author img { display:block; width:38px; aspect-ratio:1; object-fit:cover; border:2px solid #fff; border-radius:50%; outline:1px solid #dbdbdb; }
+.instagram-feed-author div { flex:1; min-width:0; font-size:11px; line-height:1.25; }
+.instagram-feed-author b { display:block; overflow:hidden; font-size:13px; text-overflow:ellipsis; white-space:nowrap; }
+.instagram-feed-author>i { font-size:23px; }
+.instagram-feed-media { position:relative; background:#111; }
+.instagram-feed-media>img { display:block; width:100%; max-height:540px; object-fit:cover; }
+.instagram-feed-media.is-reel>img { aspect-ratio:9/16; max-height:680px; }
+.instagram-feed-media.is-reel:after { content:"REEL"; position:absolute; top:13px; right:13px; padding:4px 7px; border-radius:5px; background:#0008; color:#fff; font-size:10px; font-weight:700; }
+.instagram-feed-actions { display:flex; align-items:center; gap:15px; padding:11px 13px 7px; font-size:25px; }
+.instagram-feed-actions i:last-child { margin-left:auto; }
+.instagram-feed-copy { padding:0 13px 14px; font-size:13px; line-height:1.45; }
+.instagram-feed-copy>b { display:block; margin-bottom:6px; font-size:13px; }
+.instagram-feed-copy strong { margin-right:5px; }
+.instagram-feed-copy small { display:block; margin-top:7px; color:#737373; font-size:10px; text-transform:uppercase; }
+.instagram-action-reply { width:min(100%,430px); margin:0 auto; }
+.instagram-action-reply .instagram-notification,.instagram-action-reply.instagram-notification { border:1px solid #dbdbdb; border-radius:18px; background:#fff; color:#000; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+@media (max-width:470px) { .instagram-feed-post { border-right:0; border-left:0; border-radius:0; } }
+
+/* TWITCH MOBILE */
+.twitch-profile,.twitch-action-reply { width:min(100%,430px); margin:0 auto; overflow:hidden; border:1px solid #2f2f35; border-radius:22px; background:#0e0e10; color:#efeff1; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.twitch-profile *,.twitch-action-reply * { box-sizing:border-box; }
+.twitch-statusbar { display:flex; height:34px; align-items:center; justify-content:space-between; padding:5px 18px 0; font-size:12px; font-weight:700; }
+.twitch-statusbar div { display:flex; align-items:center; gap:5px; font-size:14px; }
+.twitch-topbar { display:grid; height:48px; grid-template-columns:40px minmax(0,1fr) auto; align-items:center; padding:0 11px; }
+.twitch-topbar>i { font-size:24px; }
+.twitch-topbar>b { overflow:hidden; font-size:16px; text-align:center; text-overflow:ellipsis; white-space:nowrap; }
+.twitch-topbar>span { display:flex; gap:17px; font-size:23px; }
+.twitch-profile-cover { display:block; width:100%; height:126px; object-fit:cover; }
+.twitch-profile-main { position:relative; padding:0 15px 17px; }
+.twitch-profile-avatar { display:block; width:82px; aspect-ratio:1; margin-top:-39px; object-fit:cover; border:4px solid #0e0e10; border-radius:50%; }
+.twitch-profile-identity { margin-top:9px; }
+.twitch-profile-identity div { display:flex; align-items:center; gap:6px; }
+.twitch-profile-identity h2 { margin:0; font:700 21px/1.15 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; letter-spacing:0; text-transform:none; }
+.twitch-profile-identity i { color:#a970ff; font-size:17px; }
+.twitch-profile-identity span { display:block; margin-top:4px; color:#adadb8; font-size:12px; }
+.twitch-profile-actions { display:grid; grid-template-columns:1fr 42px 1fr; gap:7px; margin-top:14px; }
+.twitch-profile-actions span { display:grid; min-height:36px; place-items:center; border-radius:4px; background:#26262c; font-size:13px; font-weight:700; }
+.twitch-profile-actions .is-primary { background:#9147ff; color:#fff; }
+.twitch-profile-bio { margin-top:15px; color:#dedee3; font-size:13px; line-height:1.5; white-space:pre-line; }
+.twitch-profile-bio a { color:#bf94ff; font-weight:600; }
+.twitch-profile-nav { display:flex; gap:22px; padding:0 15px; overflow-x:auto; border-bottom:1px solid #2f2f35; scrollbar-width:none; }
+.twitch-profile-nav::-webkit-scrollbar { display:none; }
+.twitch-profile-nav span { min-width:max-content; padding:13px 1px 11px; color:#adadb8; font-size:13px; font-weight:600; }
+.twitch-profile-nav .is-active { border-bottom:2px solid #a970ff; color:#bf94ff; }
+.twitch-feature { padding:16px 15px; }
+.twitch-feature-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; font-size:14px; font-weight:700; }
+.twitch-feature-label span { color:#adadb8; font-size:11px; font-weight:400; }
+.twitch-feature-player { position:relative; overflow:hidden; border-radius:6px; background:#18181b; }
+.twitch-feature-player>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.85; }
+.twitch-feature-player>i { position:absolute; top:50%; left:50%; display:grid; width:46px; aspect-ratio:1; place-items:center; border-radius:50%; background:#000b; color:#fff; font-size:23px; transform:translate(-50%,-50%); }
+.twitch-live-pill { position:absolute; top:9px; left:9px; padding:4px 7px; border-radius:4px; background:#eb0400; color:#fff; font-size:10px; font-weight:800; }
+.twitch-viewers { position:absolute; right:9px; bottom:8px; padding:3px 6px; border-radius:3px; background:#000b; color:#fff; font-size:10px; }
+.twitch-feature-copy { padding:11px 1px 2px; font-size:12px; line-height:1.4; }
+.twitch-feature-copy b { display:block; overflow:hidden; font-size:14px; text-overflow:ellipsis; white-space:nowrap; }
+.twitch-feature-copy span { color:#adadb8; }
+.twitch-video-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding:0 15px 18px; }
+.twitch-video-card { min-width:0; }
+.twitch-video-card div { position:relative; }
+.twitch-video-card img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; }
+.twitch-video-card small { position:absolute; right:5px; bottom:5px; padding:2px 4px; border-radius:2px; background:#000c; color:#fff; font-size:9px; }
+.twitch-video-card b { display:block; margin-top:7px; overflow:hidden; font-size:11px; text-overflow:ellipsis; white-space:nowrap; }
+.twitch-video-card span { color:#adadb8; font-size:10px; }
+.twitch-navbar { display:grid; height:57px; grid-template-columns:repeat(5,1fr); align-items:center; border-top:1px solid #2f2f35; background:#18181b; }
+.twitch-navbar span { display:grid; place-items:center; gap:2px; color:#adadb8; font-size:19px; }
+.twitch-navbar small { font-size:8px; }
+.twitch-navbar .is-active { color:#bf94ff; }
+.twitch-homebar { width:125px; height:5px; margin:3px auto 7px; border-radius:10px; background:#efeff1; }
+.twitch-stream-head { display:flex; min-height:58px; align-items:center; gap:10px; padding:9px 12px; }
+.twitch-stream-head img { width:40px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.twitch-stream-head div { flex:1; min-width:0; font-size:11px; }
+.twitch-stream-head b { display:block; overflow:hidden; font-size:13px; text-overflow:ellipsis; white-space:nowrap; }
+.twitch-stream-head>i { font-size:22px; }
+.twitch-stream-media { position:relative; background:#000; }
+.twitch-stream-media>img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.9; }
+.twitch-stream-copy { padding:12px 14px 15px; font-size:12px; line-height:1.45; }
+.twitch-stream-copy b { display:block; margin-bottom:3px; font-size:14px; }
+.twitch-stream-copy span { color:#adadb8; }
+.twitch-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:9px; }
+.twitch-tags b { display:block; margin:0; padding:4px 7px; border-radius:20px; background:#26262c; color:#adadb8; font-size:9px; }
+.twitch-event { display:grid; min-height:70px; grid-template-columns:44px minmax(0,1fr); align-items:center; gap:11px; padding:10px 13px; }
+.twitch-event-avatar,.twitch-event-icon { display:block; width:42px; aspect-ratio:1; object-fit:cover; border-radius:50%; }
+.twitch-event-icon { display:grid; place-items:center; background:#26262c; color:#bf94ff; font-size:22px; }
+.twitch-event-icon.is-sub { background:#9147ff; color:#fff; }
+.twitch-event-icon.is-bits { background:#1f69ff; color:#fff; }
+.twitch-event-copy { min-width:0; font-size:12px; line-height:1.4; }
+.twitch-event-copy b { color:#bf94ff; }
+.twitch-event-copy time { color:#adadb8; white-space:nowrap; }
+.twitch-chat { padding:10px 13px 15px; }
+.twitch-chat-title { display:flex; align-items:center; justify-content:space-between; padding:0 0 10px; border-bottom:1px solid #2f2f35; font-size:13px; font-weight:700; }
+.twitch-chat-message { padding:7px 2px; font-size:12px; line-height:1.45; }
+.twitch-chat-message time { margin-right:6px; color:#adadb8; font-size:10px; }
+.twitch-chat-message i { margin-right:3px; color:#bf94ff; }
+.twitch-chat-message b { margin-right:5px; color:var(--twitch-name-color,#00ad96); }
+.twitch-chat-message.is-highlighted { margin:4px 0; padding:8px; border-left:3px solid #9147ff; background:#26262c; }
+.twitch-reward { display:flex; align-items:center; gap:9px; margin:6px 0; padding:9px; border-radius:4px; background:#26262c; color:#dedee3; font-size:11px; }
+.twitch-reward i { color:#bf94ff; font-size:21px; }
+@media (max-width:470px) { .twitch-profile,.twitch-action-reply { border-right:0; border-left:0; border-radius:0; } }
