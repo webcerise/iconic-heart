@@ -2103,11 +2103,9 @@ spoiler1:hover {
 
 .member-index .userlist_profil {
   position: relative;
-  display: flex;
+  display: grid;
   min-width: 0;
   height: 320px;
-  grid-column: span 3;
-  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--ih-ink);
   background: var(--ih-card);
@@ -2115,6 +2113,8 @@ spoiler1:hover {
   border-radius: 0;
   grid-gap: 0;
   padding: 0;
+  grid-column: span 6;
+  grid-template-columns: 200px minmax(0, 1fr);
 }
 
 .member-index .userlist_profil:nth-child(6n + 1),
@@ -9023,7 +9023,7 @@ blockquote:has(cite) div {
 .face-directory-entry {
   display: grid;
   min-height: 84px;
-  grid-template-columns: 68px minmax(0,1fr) 125px;
+  grid-template-columns: 68px minmax(0, 1fr) 150px;
   align-items: stretch;
   border-left: 6px solid var(--ih-ink);
 }
@@ -9987,6 +9987,8 @@ blockquote:has(cite) div {
   min-width: 0;
   padding: 24px 28px;
   border-left: 1px solid var(--ih-ink);
+  max-height: 320px;
+  overflow: auto;
 }
 
 .prelink-owner h3,
@@ -10031,7 +10033,8 @@ blockquote:has(cite) div {
 }
 
 .prelink-owner p,
-.prelink-card p {
+.prelink-card p,
+.prelink-copy {
   margin: 20px 0 0;
   font: 400 15px / 1.75 "DM Sans", Arial, sans-serif;
 }
@@ -10177,11 +10180,11 @@ blockquote:has(cite) div {
 }
 .prelink-group-summary {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 18px;
   border-top: 1px solid var(--ih-line);
   border-left: 1px solid var(--ih-line);
   grid-gap: 0;
+  margin-bottom: 20px;
 }
 
 .prelink-group-summary > div {
