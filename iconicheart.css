@@ -4498,6 +4498,71 @@ hr { border: 0; border-top: 1px solid var(--ih-line); }
   margin: 10px 0 0;
 }
 
+.ih-roll-career.is-activity { --roll-accent: var(--ih-pink); }
+.ih-roll-career.is-public { --roll-accent: var(--ih-blue); }
+.ih-roll-career.is-critical { --roll-accent: var(--ih-nexus); }
+.ih-roll-career.is-quality { --roll-accent: var(--ih-jk); }
+
+.ih-roll-career:before {
+  background: var(--roll-accent, var(--ih-gradient));
+}
+
+.ih-roll-career-result {
+  position: relative;
+  display: grid;
+  min-height: 150px;
+  grid-template-columns: minmax(0, 1fr) 170px 76px;
+  align-items: stretch;
+  margin: 8px 0 18px;
+  overflow: hidden;
+  border: 1px solid var(--ih-ink);
+}
+
+.ih-roll-career-result > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px;
+}
+
+.ih-roll-career-type {
+  font: 500 15px var(--ih-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.ih-roll-career-result .ih-roll-title {
+  margin: 8px 0 0;
+  color: var(--roll-accent);
+  font-size: clamp(38px, 6vw, 66px);
+}
+
+.ih-roll-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-left: 1px solid var(--ih-ink);
+  font: italic 600 clamp(52px, 8vw, 86px) var(--ih-serif);
+}
+
+.ih-roll-value small {
+  align-self: flex-end;
+  margin-bottom: 25px;
+  color: var(--ih-muted);
+  font: 500 12px var(--ih-mono);
+}
+
+.ih-roll-career-result > i {
+  display: grid;
+  place-items: center;
+  border-left: 1px solid var(--ih-ink);
+  background: var(--roll-accent);
+  color: #111;
+  font-size: 32px;
+}
+
 @media (max-width: 600px) {
   .ih-roll-head {
     align-items: flex-start;
@@ -4515,6 +4580,18 @@ hr { border: 0; border-top: 1px solid var(--ih-line); }
 
   .ih-roll-stats span:nth-child(-n+2) {
     border-bottom: 1px solid var(--ih-ink);
+  }
+
+  .ih-roll-career-result {
+    grid-template-columns: minmax(0, 1fr) 105px;
+  }
+
+  .ih-roll-career-result > i {
+    display: none;
+  }
+
+  .ih-roll-value small {
+    display: none;
   }
 }
 
@@ -10241,6 +10318,7 @@ blockquote:has(cite) div {
 .prelink-model-post .rules-lead strong {
   overflow-wrap: normal;
   word-break: normal;
+  display: block;
 }
 
 .prelink-model-post .prelink-variable {
