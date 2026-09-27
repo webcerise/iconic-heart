@@ -4426,6 +4426,194 @@ hr { border: 0; border-top: 1px solid var(--ih-line); }
   .profile_avatar { height: 390px; min-height: 0; border-right: 0; border-bottom: 1px solid var(--ih-ink); }
   .profile_infos { padding: 25px 5px; }
   .profile_field { grid-template-columns: 105px 1fr; }
+  /* Édition du profil */
+  #cp-main.ucp-main,
+  #cp-main.ucp-main #ucp,
+  #cp-main.ucp-main .panel,
+  #cp-main.ucp-main fieldset,
+  #cp-main.ucp-main dl,
+  #cp-main.ucp-main dt,
+  #cp-main.ucp-main dd {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+  #cp-main.ucp-main,
+  #cp-main.ucp-main #ucp,
+  #cp-main.ucp-main .panel,
+  #cp-main.ucp-main fieldset {
+    width: 100%;
+  }
+  #cp-main.ucp-main {
+    overflow: visible;
+  }
+  #cp-main.ucp-main .panel {
+    margin: 28px 0;
+  }
+  #cp-main.ucp-main fieldset {
+    padding: 0;
+  }
+  #cp-main.ucp-main dl {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0,1fr);
+    margin: 0;
+    padding: 15px;
+  }
+  #cp-main.ucp-main dl + dl {
+    border-top: 1px solid var(--ih-line);
+  }
+  #cp-main.ucp-main dt,
+  #cp-main.ucp-main dd {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: 0;
+  }
+  #cp-main.ucp-main dt {
+    padding: 0 0 8px;
+  }
+  #cp-main.ucp-main dd {
+    overflow-wrap: anywhere;
+  }
+  #cp-main.ucp-main input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+  #cp-main.ucp-main textarea,
+  #cp-main.ucp-main select {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #cp-main.ucp-main input[type="file"] {
+    overflow: hidden;
+  }
+  #cp-main.ucp-main .profil_preferences dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+  #cp-main.ucp-main .profil_preferences dd .italic,
+  #cp-main.ucp-main .profil_preferences dd br {
+    flex-basis: 100%;
+  }
+  .tabs,
+  #tabs,
+  .ucp-tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+  /* Rédaction et édition d'un message */
+  form:has(#postingbox),
+  form:has(#postingbox) > .container,
+  #postingbox,
+  #postingbox fieldset,
+  #postingbox dl,
+  #postingbox dt,
+  #postingbox dd,
+  #postingbox .message-edition,
+  #postingbox #message-box,
+  #postingbox #textarea_content {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+  form:has(#postingbox),
+  form:has(#postingbox) > .container,
+  #postingbox,
+  #postingbox fieldset,
+  #postingbox .message-edition,
+  #postingbox #message-box,
+  #postingbox #textarea_content {
+    width: 100%;
+  }
+  #postingbox {
+    margin: 28px 0;
+  }
+  #postingbox fieldset {
+    min-inline-size: 0;
+    padding: 0;
+  }
+  #postingbox dl {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0,1fr);
+    margin: 0;
+    padding: 15px;
+  }
+  #postingbox dl + dl {
+    border-top: 1px solid var(--ih-line);
+  }
+  #postingbox dt,
+  #postingbox dd {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: 0;
+  }
+  #postingbox dt {
+    padding: 0 0 8px;
+  }
+  #postingbox dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    overflow-wrap: anywhere;
+  }
+  #postingbox dd br {
+    flex-basis: 100%;
+  }
+  #postingbox input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+  #postingbox textarea,
+  #postingbox select {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+  #postingbox .message-edition {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+  }
+  #postingbox #smileyContainer {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  #postingbox .post-param {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  #postingbox .sceditor-container,
+  #postingbox .sceditor-container iframe,
+  #postingbox .sceditor-container textarea {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #postingbox .sceditor-toolbar {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: normal;
+  }
+  form:has(#postingbox) > .container > fieldset.u-center {
+    display: flex;
+    min-inline-size: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  form:has(#postingbox) > .container > details,
+  form:has(#postingbox) > .container > details table {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+  form:has(#postingbox) > .container > details {
+    overflow-x: auto;
+  }
   .userlist { grid-template-columns: 1fr; }
   .userlist_avatar { height: 340px; }
   .form-input { align-items: flex-start; flex-direction: column; }
