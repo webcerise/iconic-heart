@@ -11138,7 +11138,6 @@ blockquote:has(cite) div {
 @media (max-width:470px) { .chzzk-profile,.chzzk-action-reply { border-right:0; border-left:0; border-radius:0; } }
 
 /* CONVERSATIONS SMS */
-.sms-conversation .topic-head { display:none; }
 .sms-conversation > .topic-page-actions:not(.bottom) { display:none; }
 .sms-conversation .topic-posts { box-sizing:border-box; width:min(100%,460px); aspect-ratio:2064/4276; margin:0 auto 80px; padding:clamp(58px,14.3vw,65px) clamp(16px,4.2vw,19px) clamp(37px,9.3vw,42px); overflow:hidden; border:0; background:url("https://cdn.jsdelivr.net/gh/webcerise/iconic-heart@main/images/phone.png") center/100% 100% no-repeat; color:#f5f5f7; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; counter-reset:none; }
 .sms-pagination { display:flex; width:100%; align-items:center; justify-content:center; margin:-50px auto 55px; }
