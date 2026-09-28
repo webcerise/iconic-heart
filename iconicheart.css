@@ -469,7 +469,7 @@ spoiler1:hover {
 .ficherp4 > .details b,
 .ficherp4 > .details a { display: block; overflow-wrap: anywhere; color: var(--ih-ink); font: 500 10px / 1.4 var(--ih-mono); text-transform: uppercase; }
 .ficherp4 > .details a { text-decoration: underline; text-decoration-color: var(--ih-blue); text-underline-offset: 3px; }
-.ficherp4 > .container { display: flow-root; margin-top: 0; padding: 36px; font-size: 15px; line-height: 1.95; text-align: justify; }
+.ficherp4 > .container { display: flow-root; margin-top: 0; margin-bottom: 0; padding: 36px; font-size: 15px; line-height: 1.95; text-align: justify; }
 .ficherp4 > .container img { float: left; width: 210px; height: 315px; margin: 0 28px 16px 0; border: 1px solid var(--ih-ink); object-fit: cover; filter: grayscale(1) contrast(1.06); }
 .ficherp4 > .container p { margin: 0; }
 .ficherp4 > .container:first-letter { color: var(--ih-pink); font: italic 500 54px / .75 var(--ih-serif); }
