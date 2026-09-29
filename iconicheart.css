@@ -8537,7 +8537,7 @@ blockquote:has(cite) div {
   width: fit-content;
   align-items: center;
   gap: 7px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   color: #fff;
   font: 600 13px / 1.2 var(--font);
 }
@@ -8548,10 +8548,10 @@ blockquote:has(cite) div {
 }
 
 .group-sheet-head h2 {
-  margin: 0 0 16px;
+  margin: 0;
   overflow-wrap: anywhere;
   color: #fff;
-  font: 700 clamp(66px, 12vw, 120px) / .78 var(--ih-title);
+  font: 700 48px var(--ih-title);
   letter-spacing: -.055em;
   text-transform: none;
 }
