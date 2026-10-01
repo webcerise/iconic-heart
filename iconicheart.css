@@ -3312,7 +3312,7 @@ fieldset { border: 1px solid var(--ih-line); }
 .hub-newname { display: block; margin-top: 3px; font: italic 500 25px var(--ih-serif); }
 .hub-recent { min-width: 0; padding: 22px 28px 25px; border-right: 1px solid var(--ih-ink); }
 .hub-recent .hub-label { margin-bottom: 14px; }
-.hub-recentlist { max-height: 70px; overflow: auto; padding-right: 10px; font: 15px/1.9 var(--ih-mono); text-transform: lowercase; }
+.hub-recentlist { max-height: 80px; overflow: auto; padding-right: 10px; font: 15px/1.9 var(--ih-mono); text-transform: lowercase; }
 .hub-recenttext { color: var(--ih-muted); text-transform: uppercase; }
 .hub-recentlist .separator:last-child { display: none; }
 .hub-groups { display: grid; grid-template-columns: repeat(2,1fr); }
