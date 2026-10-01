@@ -3326,6 +3326,8 @@ fieldset { border: 1px solid var(--ih-line); }
 .hub-groups span:nth-child(6) { --group: #258eaa; }
 .hub-groups span:nth-child(odd) { border-right: 1px solid var(--ih-line); }
 .hub-groups span:nth-last-child(-n+2) { border-bottom: 0; }
+.hub-groups:has(.hub-independent) span:nth-last-child(2) { border-bottom: 1px solid var(--ih-line); }
+.hub-groups .hub-independent { --group: #db368f; grid-column: 1 / -1; border-right: 0; }
 
 .topics-box {
   border-top: 5px solid var(--ih-ink);
@@ -11709,4 +11711,8 @@ blockquote:has(cite) div {
 .sms-phone-composer > i { font-size:22px; }
 .sms-phone-composer > span { display:flex; min-height:34px; align-items:center; padding:0 13px; border:1px solid #48484a; border-radius:18px; background:#181619; color:#98989d; font-size:14px; }
 @media(max-width:520px) { .sms-direction-picker { align-items:stretch; flex-direction:column; gap:0; } .sms-direction-picker > div { border-top:1px solid var(--ih-ink); } .sms-direction-picker button:first-child { border-left:0; } }
+
+/* Professionnels : composants existants, sans modifier les profils des célébrités. */
+.ihp-career[data-job="staff"] footer,.profile-career[data-job="staff"] footer,.public-career[data-job="staff"] footer{grid-template-columns:repeat(4,minmax(0,1fr))}.ihp-career[data-job="staff"] footer>div:first-child,.profile-career[data-job="staff"] footer>div:first-child{grid-column:auto}.ihp-career[data-job="staff"] footer span{white-space:normal;overflow-wrap:anywhere}.career-deltas #career-occupation-row,.career-deltas #career-specialty-row{grid-column:1/-1;grid-template-columns:180px minmax(0,1fr)}#career-specialty{box-sizing:border-box;min-width:0;max-width:100%;padding:12px;border:0;background:var(--ih-card);color:var(--ih-ink);font:15px var(--ih-mono)}#ih-dossier-maker [hidden]{display:none!important}@media(max-width:600px){.ihp-career[data-job="staff"] footer,.profile-career[data-job="staff"] footer,.public-career[data-job="staff"] footer{grid-template-columns:1fr}.career-deltas #career-occupation-row,.career-deltas #career-specialty-row{grid-template-columns:1fr}}
+#dist-staff-fields{display:grid;gap:16px}#dist-staff-fields label{display:grid;gap:8px;min-width:0}#dist-staff-fields input,#dist-staff-fields select{box-sizing:border-box;width:100%;max-width:100%;padding:12px;border:1px solid var(--ih-ink);background:var(--ih-card);color:var(--ih-ink);font:15px var(--ih-mono)}#ih-distribution [hidden],#ih-career [hidden]{display:none!important}#ih-career .career-activity-form textarea{box-sizing:border-box;max-width:100%;width:100%;min-height:90px;padding:12px;border:1px solid var(--ih-ink);background:var(--ih-card);color:var(--ih-ink)}.dossier-staff>header{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px;background:var(--ih-ink);color:var(--ih-card)}.dossier-staff>header img{display:block;width:120px;aspect-ratio:1;object-fit:cover}.dossier-staff h2{margin:12px 0;color:var(--dossier-color);overflow-wrap:anywhere}.dossier-staff>section{padding:24px}.dossier-staff p{line-height:1.8;overflow-wrap:anywhere}@media(max-width:520px){.dossier-staff>header{grid-template-columns:70px minmax(0,1fr);gap:14px}.dossier-staff>header img{width:70px}}
 
